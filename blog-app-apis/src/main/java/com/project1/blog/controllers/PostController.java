@@ -31,18 +31,22 @@ public class PostController {
 	@Autowired
 	private PostService postService;
 	
+	
+	//create post
 	@PostMapping("/user/{userId}/category/{categoryId}/posts")
 	public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto, @PathVariable Integer userId, @PathVariable Integer categoryId){
 		PostDto dtoPost =postService.createPost(postDto, userId, categoryId);
 		return new ResponseEntity<PostDto>(dtoPost, HttpStatus.CREATED);
 	}
 	
+	//get post by userID
 	@GetMapping("/user/{userId}/posts")
 	public ResponseEntity<List<PostDto>> getPostByUserId(@PathVariable Integer userId){
 		List<PostDto> postDtots = postService.getPostsByUser(userId);
 		return new ResponseEntity<List<PostDto>>(postDtots, HttpStatus.OK);
 	}
 	
+	//get post by category
 	@GetMapping("/category/{categoryId}/posts")
 	public ResponseEntity<List<PostDto>> getPostByCategoryId(@PathVariable Integer categoryId){
 		List<PostDto> postDtots = postService.getPostsByCategory(categoryId);
