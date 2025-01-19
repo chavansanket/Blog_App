@@ -1,6 +1,6 @@
 package com.project1.blog.services.impl;
 
-import java.io.Console;
+//import java.io.Console;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,7 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.databind.ser.BeanPropertyWriter;
+//import com.fasterxml.jackson.databind.ser.BeanPropertyWriter;
 import com.project1.blog.entities.Category;
 import com.project1.blog.entities.Post;
 import com.project1.blog.entities.User;
